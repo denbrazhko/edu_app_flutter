@@ -1,0 +1,70 @@
+name: edu_app
+description: "Education app"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #  router
+  go_router: ^14.2.3
+
+  #  localization
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+  #  bloc
+  flutter_bloc: ^8.1.6
+
+  #  freezed
+  freezed_annotation: ^2.4.4
+
+  #  getit
+  get_it: ^7.6.0
+
+  #  database
+  sqflite: ^2.3.3+1
+
+  #  ui
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+  #  freezed
+  build_runner: ^2.4.12
+  freezed: ^2.5.7
+
+flutter:
+  generate: true
+  assets:
+    - assets/
+
+  uses-material-design: true
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+          weight: 200
+
+
+

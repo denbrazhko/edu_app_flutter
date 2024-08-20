@@ -1,4 +1,5 @@
 import 'package:edu_app/domain/repositories/image_ext.dart';
+import 'package:edu_app/generated/assets.dart';
 import 'package:edu_app/presentation/features/splash/cubit/splash_cubit.dart';
 import 'package:edu_app/presentation/router/router.dart';
 import 'package:edu_app/presentation/style/colors.dart';
@@ -28,7 +29,7 @@ class SplashPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(),
-              SvgPicture.asset("assets/splash_logo.svg")
+              SvgPicture.asset(Assets.assetsSplashLogo)
                   .withAspectRatioCalculated(
                       context: context,
                       withFactor: 0.3,

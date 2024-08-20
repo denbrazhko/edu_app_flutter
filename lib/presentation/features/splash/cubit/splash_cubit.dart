@@ -9,7 +9,7 @@ class SplashCubit extends Cubit<LoadingState> {
   SplashCubit() : super(LoadingState(0));
 
   void startProgress() {
-    const duration = Duration(milliseconds: 60);
+    const duration = Duration(milliseconds: 7);
     int progress = 0;
     Timer.periodic(duration, (timer) {
       if (progress < 100) {

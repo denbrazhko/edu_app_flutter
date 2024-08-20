@@ -1,5 +1,26 @@
 {
   "appTitle": "Education app",
-
-  "splashCraft": "Craft your mind - improve your life"
+  "splashCraft": "Craft your mind - improve your life",
+  "logic": "Logic puzzles",
+  "memory": "Memory training",
+  "mental": "Mental arithmetic",
+  "attention": "Attention",
+  "reading": "Speed reading",
+  "daily": "DailyTraining",
+  "homeDailyDescr": "Practice daily and your mental progress won't take long!",
+  "currentScore": "Current score - {score}",
+  "@currentScore": {
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "0"
+      }
+    }
+  },
+  "homeLogicDescr": "Boost your intellect by solving tricky tasks",
+  "homeMemoryDescr": "Improve your memory and upgrade your effectiveness",
+  "homeMentalDescr": "Learn to count quickly without the help of a calculator",
+  "homeReadingDescr": "Improve your reading speed and consume tons of information",
+  "homeAttentionDescr": "Elevate your focus and mental agility with interesting games",
+  "homeBrainClickToast": "Play games outside of Daily training to earn points here"
 }

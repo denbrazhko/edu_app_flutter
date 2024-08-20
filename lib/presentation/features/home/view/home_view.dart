@@ -1,7 +1,10 @@
+import 'package:edu_app/presentation/features/splash/view/splash_page.dart';
+import 'package:edu_app/presentation/router/router.dart';
 import 'package:edu_app/presentation/widgets/pressable_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../generated/assets.dart';
 import '../../../style/colors.dart';
@@ -28,7 +31,9 @@ class HomePage extends StatelessWidget {
                       Assets.assetsIcDailyLogicBigThumb, () {})),
               Expanded(
                   child: _gameCardWithPadding(s.memory, s.homeMemoryDescr,
-                      Assets.assetsIcDailyMemoryBigThumb, () {})),
+                      Assets.assetsIcDailyMemoryBigThumb, () {
+                context.go(EduAppRouter.memoryGame);
+              })),
               Expanded(
                   child: _gameCardWithPadding(s.mental, s.homeMentalDescr,
                       Assets.assetsIcDailyMentalBigThumb, () {})),
@@ -80,8 +85,7 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                             height: 18,
                             width: 18,
-                            child:
-                                SvgPicture.asset(Assets.assetsIcHomeBrain)),
+                            child: SvgPicture.asset(Assets.assetsIcHomeBrain)),
                         const SizedBox(
                           width: 8,
                         ),

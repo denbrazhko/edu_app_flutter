@@ -1,3 +1,4 @@
+import 'package:edu_app/presentation/features/memory/game/cubit/memory_game_cubit.dart';
 import 'package:edu_app/presentation/features/splash/cubit/splash_cubit.dart';
 import 'package:edu_app/presentation/router/router.dart';
 import 'package:edu_app/presentation/style/theme.dart';
@@ -7,9 +8,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
-  runApp(MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => SplashCubit())],
-      child: EduApp()));
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(create: (context) => SplashCubit()),
+    BlocProvider(create: (context) => MemoryGameCubit())
+  ], child: EduApp()));
 }
 
 class EduApp extends StatelessWidget {

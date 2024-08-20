@@ -60,7 +60,7 @@ class SplashPage extends StatelessWidget {
                 builder: (context, state) {
                   if (state.progress == 100) {
                     WidgetsBinding.instance.addPostFrameCallback((_) {
-                      context.go('/home');
+                      context.go(EduAppRouter.home);
                     });
                   }
                   return Padding(

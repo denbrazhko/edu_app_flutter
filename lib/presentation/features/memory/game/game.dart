@@ -1,0 +1,1 @@
+export 'view/memory_game_page.dart';

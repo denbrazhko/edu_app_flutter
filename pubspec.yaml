@@ -48,6 +48,8 @@ flutter:
   assets:
     - assets/
     - assets/fonts/
+    - lib/generated/assets.dart
+    - assets/memory/
 
   uses-material-design: true
 
@@ -66,5 +68,8 @@ flutter:
         - asset: assets/fonts/Poppins-ExtraLight.ttf
           weight: 200
 
+
+flutter_assets_generator:
+  path_ignore: ["assets/memory"]
 
 

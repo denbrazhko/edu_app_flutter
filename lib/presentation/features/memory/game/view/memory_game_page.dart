@@ -3,34 +3,104 @@ import 'dart:math';
 import 'package:edu_app/presentation/features/memory/game/cubit/memory_game_cubit.dart';
 import 'package:edu_app/presentation/features/memory/game/model/card_model.dart';
 import 'package:edu_app/presentation/features/memory/game/model/memory_level.dart';
-import 'package:edu_app/presentation/router/router.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../../generated/assets.dart';
 
 class MemoryGamePage extends StatelessWidget {
-  const MemoryGamePage({super.key});
+  final MemoryLevel level;
+
+  const MemoryGamePage({super.key, required this.level});
 
   @override
   Widget build(BuildContext context) {
-    context.read<MemoryGameCubit>().start();
+    context.read<MemoryGameCubit>().start(level: level);
     return Scaffold(
-      body: Center(
-        child: BlocBuilder<MemoryGameCubit, MemoryGameState>(
-          builder: (context, state) {
-            return state.when(
-                initial: () => Container(),
-                game: (cards, level) => Center(child: _grid(cards, level)));
-          },
-        ),
+      body: BlocBuilder<MemoryGameCubit, MemoryGameState>(
+        builder: (context, state) {
+          return state.when(
+              initial: () => Container(),
+              game: (cards, level) => _gamePage(context, cards));
+        },
       ),
+    );
+  }
+
+  Widget _gamePage(BuildContext context, List<MemoryCard> cards) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(top: 45),
+          child: _scoreBar(context, 12, 45, "00:15"),
+        ),
+        Expanded(
+            child: Center(
+          child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              child: _grid(cards, level)),
+        ))
+      ],
+    );
+  }
+
+  Widget _scoreBar(
+      BuildContext context, int attempts, int streak, String time) {
+    final s = AppLocalizations.of(context)!;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Row(
+          children: [
+            Text(s.attempts,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0xFF839DBA))),
+            Text(attempts.toString(),
+                style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0xFF196AFF)))
+          ],
+        ),
+        Row(
+          children: [
+            SizedBox(
+                height: 16,
+                width: 12,
+                child: SvgPicture.asset(Assets.assetsIcStreak)),
+            Text(streak.toString(),
+                style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0xFF196AFF)))
+          ],
+        ),
+        Row(
+          children: [
+            Text(s.time,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0xFF839DBA))),
+            Text(time,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0xFF196AFF)))
+          ],
+        ),
+      ],
     );
   }
 
   Widget _grid(List<MemoryCard> cards, MemoryLevel level) {
     return GridView.builder(
+        shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: level.columns, childAspectRatio: 1),
         itemCount: cards.length,

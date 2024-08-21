@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
               Expanded(
                   child: _gameCardWithPadding(s.memory, s.homeMemoryDescr,
                       Assets.assetsIcDailyMemoryBigThumb, () {
-                context.push(EduAppRouter.memoryGame);
+                context.push(EduAppRouter.memorySettings);
               })),
               Expanded(
                   child: _gameCardWithPadding(s.mental, s.homeMentalDescr,

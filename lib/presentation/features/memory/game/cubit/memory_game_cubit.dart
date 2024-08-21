@@ -22,9 +22,10 @@ class MemoryGameCubit extends Cubit<MemoryGameState> {
   MemoryCard? _firstClicked;
   MemoryCard? _secondClicked;
 
-  final MemoryLevel _level = MemoryLevel.l3x4;
+  MemoryLevel _level = MemoryLevel.l3x4;
 
   void start({MemoryLevel level = MemoryLevel.l3x4}) {
+    _level = level;
     _generateCards();
   }
 

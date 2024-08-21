@@ -22,5 +22,16 @@
   "homeMentalDescr": "Learn to count quickly without the help of a calculator",
   "homeReadingDescr": "Improve your reading speed and consume tons of information",
   "homeAttentionDescr": "Elevate your focus and mental agility with interesting games",
-  "homeBrainClickToast": "Play games outside of Daily training to earn points here"
+  "homeBrainClickToast": "Play games outside of Daily training to earn points here",
+  "bestStreak": "Best streak - ",
+  "memorySettingsTag0": "attetnion",
+  "memorySettingsTag1": "memory",
+  "memorySettingsTag2": "thinking capacity",
+  "memorySettingsTag3": "concentration",
+  "gameRules": "GameRules",
+  "taskDifficulty": "Task difficulty",
+  "memoryRules": "Turn over cards with images and find matching pairs. The faster you do it and in fewer attempts, the more points you get",
+  "attempts": "Attempts:",
+  "time": "Time:"
+
 }

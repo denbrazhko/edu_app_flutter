@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsAllGames = 'assets/all_games.svg';
   static const String assetsIcBack = 'assets/ic_back.svg';
   static const String assetsIcDailyAttentionBigThumb = 'assets/ic_daily_attention_big_thumb.png';
   static const String assetsIcDailyBraingSq = 'assets/ic_daily_braing_sq.png';
@@ -12,7 +13,9 @@ class Assets {
   static const String assetsIcHomeBrain = 'assets/ic_home_brain.svg';
   static const String assetsIcMemoryTopBar = 'assets/ic_memory_top_bar.png';
   static const String assetsIcStreak = 'assets/ic_streak.svg';
+  static const String assetsSettings = 'assets/settings.svg';
   static const String assetsSplashLogo = 'assets/splash_logo.svg';
+  static const String assetsStatistics = 'assets/statistics.svg';
   static const String fontsPoppinsBold = 'assets/fonts/Poppins-Bold.ttf';
   static const String fontsPoppinsExtraLight = 'assets/fonts/Poppins-ExtraLight.ttf';
   static const String fontsPoppinsLight = 'assets/fonts/Poppins-Light.ttf';

@@ -32,6 +32,8 @@
   "taskDifficulty": "Task difficulty",
   "memoryRules": "Turn over cards with images and find matching pairs. The faster you do it and in fewer attempts, the more points you get",
   "attempts": "Attempts:",
-  "time": "Time:"
-
+  "time": "Time:",
+  "allGames": "AllGames",
+  "settings": "Settings",
+  "statistics": "Statistics"
 }

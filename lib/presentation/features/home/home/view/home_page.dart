@@ -6,9 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../generated/assets.dart';
-import '../../../style/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../../generated/assets.dart';
+import '../../../../style/colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,46 +17,50 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations s = AppLocalizations.of(context)!;
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-        value: const SystemUiOverlayStyle(
-            systemNavigationBarColor: AppColors.backgroundColor,
-            systemNavigationBarIconBrightness: Brightness.dark),
-        child: Scaffold(
-          backgroundColor: AppColors.backgroundColor,
-          appBar: _appBar(context, 522),
-          body: Column(
-            children: [
-              _dailyCard(context, 152),
-              Expanded(
-                  child: _gameCardWithPadding(s.logic, s.homeLogicDescr,
-                      Assets.assetsIcDailyLogicBigThumb, () {})),
-              Expanded(
-                  child: _gameCardWithPadding(s.memory, s.homeMemoryDescr,
-                      Assets.assetsIcDailyMemoryBigThumb, () {
-                context.push(EduAppRouter.memorySettings);
-              })),
-              Expanded(
-                  child: _gameCardWithPadding(s.mental, s.homeMentalDescr,
-                      Assets.assetsIcDailyMentalBigThumb, () {})),
-              Expanded(
-                  child: _gameCardWithPadding(s.attention, s.homeAttentionDescr,
-                      Assets.assetsIcDailyAttentionBigThumb, () {})),
-              Expanded(
-                  child: _gameCardWithPadding(s.reading, s.homeReadingDescr,
-                      Assets.assetsIcDailyReadingBigThumb, () {})),
-            ],
-          ),
-        ));
+    return Column(
+      children: [
+        _appBar(context, 152),
+        _dailyCard(context, 152),
+        Expanded(
+            child: _gameCardWithPadding(s.logic, s.homeLogicDescr,
+                Assets.assetsIcDailyLogicBigThumb, () {})),
+        Expanded(
+            child: _gameCardWithPadding(
+                s.memory, s.homeMemoryDescr, Assets.assetsIcDailyMemoryBigThumb,
+                () {
+          context.push(EduAppRouter.memorySettings);
+        })),
+        Expanded(
+            child: _gameCardWithPadding(s.mental, s.homeMentalDescr,
+                Assets.assetsIcDailyMentalBigThumb, () {})),
+        Expanded(
+            child: _gameCardWithPadding(s.attention, s.homeAttentionDescr,
+                Assets.assetsIcDailyAttentionBigThumb, () {})),
+        Expanded(
+            child: _gameCardWithPadding(s.reading, s.homeReadingDescr,
+                Assets.assetsIcDailyReadingBigThumb, () {})),
+      ],
+    );
   }
 
   PreferredSizeWidget _appBar(BuildContext context, int score) {
     final AppLocalizations s = AppLocalizations.of(context)!;
     return PreferredSize(
       preferredSize: const Size.fromHeight(80),
-      child: Card(
-        elevation: 4,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(bottomRight: Radius.circular(16))),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius:
+              const BorderRadius.only(bottomRight: Radius.circular(16)),
+          color: AppColors.appBarColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
         child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 50, 16, 25),
             child: Row(
@@ -224,7 +229,7 @@ class HomePage extends StatelessWidget {
                       fontSize: 16,
                       color: Color(0xFF0F2651)),
                 ),
-                const SizedBox(height: 8),
+                const Spacer(),
                 Text(description,
                     style:
                         const TextStyle(fontSize: 11, color: Color(0xFFAEBDCD)))

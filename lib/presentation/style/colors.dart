@@ -8,6 +8,11 @@ class AppColors {
 
   static const homeAppBar = Color(0xFFfff9f6);
   static const homeBlueText = Color(0xFF51260f);
+  
+  static const homeNavBarActivePrimary = Color(0xFF196AFF);
+  static const homeNavBarActiveSecondary = Color(0xFFFFFFFF);
+  static const homeNavBarInactivePrimary = Color(0xFFC4D4E6);
+
 
   static const blueGradientColors = <Color>[
     Color(0xFF19F7FF),
